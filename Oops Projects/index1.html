@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Shape {
+            constructor(color) {
+                this.color = color;
+            }
+            getColor() {
+                return this.color;
+            }
+        }
+
+        class Circle extends Shape {
+            constructor(color, radius) {
+                super(color);
+                this.radius = radius;
+            }
+        }
+
+        class ColoredCircle extends Circle {
+            constructor(color, radius) {
+                super(color, radius);
+            }
+        }
+
+        let coloredCircle = new ColoredCircle('blue', 5);
+        console.log(coloredCircle.getColor());
+    </script>
+
+
+
+    Explaination:
+
+    This code defines three classes: Shape, Circle, and ColoredCircle.
+
+    Shape:  This class has a constructor that takes a color parameter 
+            It also has a method getColor() that returns the color of the shape.
+
+    Circle: This class extends Shape and adds a radius parameter to its constructor.
+            super(color) calls the constructor of the Shape class.
+    
+    ColoredCircle: This class extends Circle and inherits the properties and methods from both Circle and Shape. 
+
+    outpu => blue
+</body>
+
+</html>
