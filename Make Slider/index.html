@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body
+        {
+            background-image: url('https://www.chumbak.com/cdn/shop/files/background_bbe449e0-8701-4807-97da-df83d8341a9d.jpg?v=1712209787');
+        }
+        img
+        {
+            margin-left: 33%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="" id="IMG" alt="" style="height: 700px; width: 500px;">
+</body>
+
+<script>
+    let arr = ["https://images.unsplash.com/photo-1585504989076-76dc39c74ac3?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1659025510341-f2295087ff96?q=80&w=1945&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1693909178601-e31492f4a538?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1604430352727-c0555f882e01?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+
+    let currentindex = 0;
+
+    setInterval(() => {
+        currentindex = (currentindex + 1) % arr.length
+        document.querySelector("#IMG").src = arr[currentindex]
+    }, 2000);
+</script>
+
+</html>
