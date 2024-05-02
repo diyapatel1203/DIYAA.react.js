@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body
+      {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/008/014/115/non_2x/tropical-leaves-background-design-summer-leaves-flat-illustration-simple-banner-with-copy-space-free-vector.jpg');
+        height: 90%;
+        width: 90%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      h3
+      {
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 20%;
+        left: 50%;
+        font-size: 35px;
+      }
+      h1
+      {
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 30%;
+        left:50%;
+      }
+      .btn1
+      {
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 42%;
+        left: 46%;
+        background-color: green;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+      }
+      .btn2
+      {
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 42%;
+        left: 55%;
+        background-color: green;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <h3>Countdown</h3>
+    <button class="btn1" onClick="start()">Start Timer</button>
+    <button class="btn2" onClick="stop()">Stop Timer</button>
+  </body>
+</html>
+
+<script>
+  let i = 0;
+  let id
+  function start() {
+       id = setInterval(function () {
+      console.log(i);
+      document.querySelector("h1").innerText = i;
+      i++;
+    }, 1000);
+  }
+
+  function stop() { 
+    clearInterval(id);
+    document.querySelector("h1").innerText = "Timer stopped";
+  }
+</script>
