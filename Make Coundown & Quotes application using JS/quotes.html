@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyV-NmU3YLhic7WwiMi_taK6c-wpeKWa3DLH1RmmF9OC4LJuvDJalOZUFY4JVs_PCHbpk&usqp=CAU');
+            height: 95vh;
+            width: 99%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        h2
+        {
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 40%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>
+
+<script>
+    let arr=["You must be the change you wish to see in the world","Spread love everywhere you go","Do one thing every day that scares you"]
+
+    let index=0;
+
+    setInterval(()=>{
+        index=(index+1)%arr.length
+        document.querySelector("h2").innerText=arr[index]
+    },3000)
+</script>
