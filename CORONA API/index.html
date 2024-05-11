@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box:hover 
+        {
+            box-shadow: 5px 5px 20px black;
+        }
+
+        .box 
+        {
+            background-color: rgb(243, 242, 242);
+            padding: 10px;
+            transition: all ease-in-out 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function Fetchdata() {
+        fetch("https://api.rootnet.in/covid19-in/stats/latest")
+            .then((res) => res.json())
+            .then((data) => CardList(data.data.regional))
+            .catch((err) => console.log(err))
+    }
+
+    Fetchdata()
+
+    function CardList(data) {
+        const store = data.map((el) => SingleCard(el.loc, el.confirmedCasesIndian, el.confirmedCasesForeign, el.discharged, el.deaths, el.totalConfirmed))
+        document.getElementById("container").innerHTML = store.join("")
+    }
+
+    function SingleCard(loc, confirmedCasesIndian, confirmedCasesForeign, discharged, deaths, totalConfirmed) {
+        let Card = `
+        <div class="box">
+            <h2>Location :${loc}</h2>
+            <h4>confirmedCasesIndian : ${confirmedCasesIndian}</h4>
+            <h4>confirmedCasesForeign : ${confirmedCasesForeign}</h4>
+            <h4>discharged : ${discharged}</h4>
+            <h4>deaths : ${deaths}</h4>
+            <h4>totalConfirmed : ${totalConfirmed}</h4>
+        </div>
+        `
+
+        return Card;
+    }
+</script>
